@@ -1,0 +1,18 @@
+header {
+  padding:10px 20px;
+  border-bottom:1px solid #f1f2f3;
+  box-shadow: 1px 2px 15px rgba(0,0,0, .1);
+}
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 172px);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  box-shadow: 1px 2px 15px rgba(0,0,0, .1);
+}

@@ -1,0 +1,14 @@
+.container {
+    color: #444;
+    padding: 10px;
+    margin-bottom:10px;
+    border:1px solid #CCC;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px rgba(0,0,0, .1);
+}
+.container:hover {
+    color: #222;
+    background-color: #f2f3f4;
+    cursor: pointer;
+    box-shadow: 1px 2px 8px rgba(0,0,0, .2);
+}
