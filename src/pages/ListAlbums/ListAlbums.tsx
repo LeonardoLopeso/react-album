@@ -2,9 +2,10 @@ import styles from './styles.module.css';
 import { api } from '../../service/api';
 import { useEffect, useState } from 'react';
 import { Talbums } from '../../types/Albums';
-import { AlbumsItems } from '../../components/AlbunsItems/AlbunsItems';
+import { Album } from '../../components/Album/Album';
+import { Link } from 'react-router-dom';
 
-const Albums = () => {
+const ListAlbums = () => {
     const [albums, setAlbums] = useState<Talbums[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -21,13 +22,17 @@ const Albums = () => {
 
     return (
         <div className={styles.container}>
-            {loading &&
-                <p>Carregando...</p>
-            }
 
             <div>
+
+                {loading &&
+                    <p>Carregando...</p>
+                }
+
                 {albums.map((item, index) => (
-                    <AlbumsItems key={index} data={item} />
+                    <Link key={index} to={`/album/${item.id}`}>
+                        <Album data={item} />
+                    </Link>
                 ))}
             </div>
 
@@ -38,4 +43,4 @@ const Albums = () => {
     )
 }
 
-export default Albums;
+export default ListAlbums;

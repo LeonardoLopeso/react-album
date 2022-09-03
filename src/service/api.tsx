@@ -4,14 +4,21 @@ const http = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com'
 });
 
-// Requisição get
 export const api = {
     getAllAlbums: async () => {
-        let response = await http.get('/albums');
+        let response = await http('/albums');
         return response.data;
     },
-    getOneAlbum: async ( id: number ) => {
-        let response = await http.get(`/albums/${id}`);
+    getOneAlbumAndItems: async (id: string) => {
+        let response = await http(`/albums/${id}`);
+        return response.data;
+    },
+    getPhotosFromAlbum: async (id: string) => {
+        const response = await http(`/albums/${id}/photos`);
+        return response.data;
+    },
+    getPhoto: async (id: string) => {
+        const response = await http(`/photos/${id}`);
         return response.data;
     }
 }
