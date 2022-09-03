@@ -1,5 +1,5 @@
+import { MainRouter } from './routes/MainRoutes';
 import styles from './App.module.css'
-import { Home } from './pages/Home/Home';
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
         <h1>Galeria de fotos</h1>
       </header>
       <div className={styles.container}>
-        <Home />
+        <MainRouter />
       </div>
       <footer>
         Footer da página.
